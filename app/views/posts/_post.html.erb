@@ -1,0 +1,19 @@
+<div class="card mb-3" id="<%= dom_id post %>">
+  <h5 class="card-header"><%= post.topic %></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.topic %></h5>
+    <p class="card-text"><%= post.body %></p>
+
+
+    <% if controller_name == "posts" && action_name == "show" %>
+      <div class="d-flex">
+        <%= link_to "Edit this post", edit_post_path(@post), class:"btn btn-primary btn-sm me-3" %>
+        <%= button_to "Destroy this post", @post, method: :delete, class:"btn btn-danger btn-sm" %>
+      </div>
+    <% end %>
+
+    <% unless controller_name == "posts" && action_name == "show" %>
+      <%= link_to "Show this post", post %>
+    <% end %>
+  </div>
+</div>

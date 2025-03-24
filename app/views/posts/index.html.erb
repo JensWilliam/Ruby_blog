@@ -1,0 +1,23 @@
+
+
+<% content_for :title, "Posts" %>
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Posts</h1>
+  <div>
+    <%= link_to "Add new post", new_post_path, class:"btn btn-primary" %>
+  </div>
+</div>
+<div>
+  <p class="fs-6">
+    These posts are really only made by Jens William Egeland.
+    <br>
+    He is just trying to learn Ruby on Rails.
+  </p>
+
+</div>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+</div>
