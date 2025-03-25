@@ -26,9 +26,8 @@
     <%= render 'home/header' %>
     <br>
     <div class="container">
-      <% if notice %>
-        <%= render 'layouts/alert' %>
-      <% end %>
+      <%= render 'layouts/alert', message: notice if notice %>
+      <%= render 'layouts/alert', alert_type: 'danger', alert_label: 'Error', icon_id: 'exclamation-triangle-fill', message: alert if alert %>
 
       <%= yield %>
     </div>
